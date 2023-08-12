@@ -1,0 +1,44 @@
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  tracing:
+#    sampling:
+#      probability: '1.0'
+#eureka:
+#  client:
+#    service-url:
+#      default-zone: http://localhost:8761/eureka/
+#    register-with-eureka: 'true'
+#    fetch-registry: 'true'
+#  instance:
+#    instance-id: ${spring.application.name}:${random.value}
+    
+spring:
+  config:
+    import: optional:configserver:http://localhost:8889
+  application:
+    name: ORGANIZATION-SERVICE
+    
+#  datasource:
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    url: jdbc:mysql://localhost:3306/03_organization_db
+#  jpa:
+#    show-sql: 'true'
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        format_sql: 'true'
+
+#logging:
+#  file:
+#    name: F:/LogFiles/organization-service.log
+#springdoc:
+#  api-docs:
+#    path: /api-docs
+#server:
+#  port: '8083'

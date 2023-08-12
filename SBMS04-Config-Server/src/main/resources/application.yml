@@ -1,0 +1,30 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+#eureka:
+#  client:
+#    service-url:
+#      default-zone: http://localhost:8761/eureka/
+#    fetch-registry: 'true'
+#    register-with-eureka: 'true'
+#  instance:
+#    instance-id: ${spring.application.name}:${random.value}
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          default-label: master
+          password: Swamy@156
+          username: swamymasna@gmail.com
+          clone-on-start: 'true'
+          uri: https://github.com/swamymasna/SBMS-YML-Config-Props-2023.git
+  application:
+    name: CONFIG-SERVER
+    
+server:
+  port: '8889'

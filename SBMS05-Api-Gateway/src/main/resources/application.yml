@@ -1,0 +1,38 @@
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#eureka:
+#  client:
+#    service-url:
+#      default-zone: http://localhost:8761/eureka/
+#    register-with-eureka: 'true'
+#    fetch-registry: 'true'
+#  instance:
+#    instance-id: ${spring.application.name}:${random.value}
+
+spring:
+
+#  cloud:
+#    gateway:
+#      routes[2]:
+#        uri: lb://ORGANIZATION-SERVICE
+#        id: ORGANIZATION-SERVICE
+#        predicates[0]: Path=/api/organizations/**
+#      routes[0]:
+#        id: EMPLOYEE-SERVICE
+#        uri: lb://EMPLOYEE-SERVICE
+#        predicates[0]: Path=/api/employees/**
+#      routes[1]:
+#        id: DEPARTMENT-SERVICE
+#        predicates[0]: Path=/api/departments/**
+#        uri: lb://DEPARTMENT-SERVICE
+
+  application:
+    name: API-GATEWAY
+  config:
+    import: optional:configserver:http://localhost:8889
+
+#server:
+#  port: '9090'

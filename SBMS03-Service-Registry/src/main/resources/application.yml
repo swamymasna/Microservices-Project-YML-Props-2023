@@ -1,0 +1,16 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+eureka:
+  client:
+    fetch-registry: 'false'
+    register-with-eureka: 'false'
+
+spring:
+  application:
+    name: EUREKA-SERVER
+
+server:
+  port: '8761'
